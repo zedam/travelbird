@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+body>.container {
+  padding-top: 100px;
+}
+
+.breadcrumb {
+  box-shadow: 1px 1px 3px #CCCCCC;
+}
+
+form {
+  margin: 0;
+}
+
+nav.container ul {
+  list-style: none;
+  float: left;
+  height: 40px;
+  padding-bottom: 20px;
+}
+
+nav.container ul li {
+  float: left;
+  padding: 0 10px;
+  line-height: 80px;
+}
+
+#logo {
+  float: left;
+}
+
+body>section.container {
+  padding-bottom: 70px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  background: #eee;
+  box-shadow: -1px 0px 3px #ccc;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  padding: 10px;
+}
+
+.copyright {
+  float: right;
+  text-shadow: 1px 1px #fff;
+  color: #666;
+}

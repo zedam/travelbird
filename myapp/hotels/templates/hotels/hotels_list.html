@@ -1,0 +1,41 @@
+
+  {% for hotel in hotels %}
+
+  <li class="row-fluid">
+    <div class="span3">
+      <a href="{% url "hotel" hotel.id %}">
+        <img src="/static/uploads/hotels/{{hotel.image}}" alt="{{hotel}}"/>
+      </a>
+    </div>
+    <span class="span7">
+      <h3>
+        <a href="{% url "hotel" hotel.id %}">{{hotel}}</a>
+      </h3>
+      <p>
+        {{hotel.description}}
+      </p>
+      <div>
+        Available from:
+        <strong>{{ hotel.date_from|date:"M d, Y" }}</strong>
+        to:
+        <strong>{{ hotel.date_thru|date:"M d, Y" }}</strong>
+      </div>
+    </span>
+    <span class="span2 address">
+      <h5>
+        {{hotel.city}}
+        <address>{{hotel.address}}</address>
+      </h5>
+      <a class="map_link" href="http://maps.google.com/?q={{hotel.address}}" target="_blank">How to arrive?</a>
+    </span>
+
+
+    {% if not forloop.last %}
+    {% endif %}
+
+  </li>
+  {% endfor %}
+
+  {% if hotels.count = 0 %}
+  <li class="no_data">No Hotels found</li>
+  {% endif %}

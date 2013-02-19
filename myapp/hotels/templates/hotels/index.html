@@ -1,0 +1,35 @@
+{% extends "hotels/base.html" %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+  <link rel="stylesheet" type="text/css" media="all" href="/static/css/daterangepicker.css" />
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="/static/js/typeahead_with_id.js"></script>
+  <script type="text/javascript" src="/static/js/daterangepicker.js"></script>
+  <script type="text/javascript" src="/static/js/date.js"></script>
+  <script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock %}
+
+<!-- BREADCRUMBS -->
+{% block breadcrumb %}
+ <li>
+   Hotels <span class="divider">/</span>
+ </li>
+{% endblock %}
+
+
+{% block content %}
+
+    {% include "hotels/search.html" %}
+
+  <div id="hotels_results">
+
+    {% include "hotels/results.html"  with hotels=hotels %}
+
+  </div>
+
+{% endblock %}

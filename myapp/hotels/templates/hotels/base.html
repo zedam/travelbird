@@ -1,0 +1,112 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Enable this line for testing for explorer -->
+    <!--     <script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script> -->
+
+    <!-- version {{build_version}} {{branch}}/{{commit}} -->
+    <title>{% block pagetitle %}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="description of the site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block meta_data %}{% endblock %}
+
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+     {% load compress %}
+
+
+    <!-- CSS Styles -->
+
+    <!-- django compressor installed for CSS -->
+     {% compress css %}
+      <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.css">
+      <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+      {% block extra_css %}{% endblock %}
+      <!-- CSS for Explorer -->
+
+       <!--[if gte IE 9]>
+         <link rel="stylesheet" type="text/css" href="/static/css/ie9.css">
+       <![endif]-->
+
+       <!--[if IE]>
+         <link rel="stylesheet" type="text/css" href="/static/css/ie.css">
+       <![endif]-->
+
+    {% endcompress %}
+    {% block extra_head %}{% endblock%}
+
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+
+      <!-- Principal Menu -->
+      <div class="navbar-inner">
+        <nav class="container">
+          <a href="{% url "index" %}" id="logo">
+            <img src="{% static "img/logo.png" %}" />
+          </a>
+          <ul>
+            <li>
+              <a href="">Link2</a>
+            </li>
+            <li>
+              <a href="">Link3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="container">
+      <ul class="breadcrumb">
+        <li>
+          <a href="{% url "index" %}">Home</a> <span class="divider">/</span>
+        </li>
+        {% block breadcrumb %}
+        <!-- ADD BREADCRUMBS IN EVERY TEMPLATE -->
+        {% endblock %}
+      </ul>
+
+      {% block content %}
+        This is some content in the main block.
+      {% endblock %}
+    </section>
+
+    <footer class="container-fluid">
+      <ul class="container">
+        <li><a href="#" >Contact</a></li>
+        <li><a href="#" >About us</a></li>
+        <li><a href="#" >FAQ</a></li>
+        <li><a href="#" >Help</a></li>
+        <li class="copyright">TravelBird 2013 &copy;</li>
+      </ul>
+    </footer>
+
+    <!-- django compressor installed for JS-->
+    {% compress js %}
+
+    <script type="text/javascript" src="/static/js/modernizr.custom.12118.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/common.js" ></script>
+
+    {% endcompress %}
+
+    <!-- Here we can add js for each template or app we use -->
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<ul id="result_count">
+  <li>
+    <strong>{{hotels.count}}</strong> hotels found
+  </li>
+</ul>
+<ul id="hotels">
+  {% include "hotels/hotels_list.html" with hotels=hotels %}
+</ul>
