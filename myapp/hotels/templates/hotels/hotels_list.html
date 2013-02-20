@@ -1,10 +1,11 @@
+{% load staticfiles %}
 
   {% for hotel in hotels %}
 
   <li class="row-fluid">
     <div class="span3">
       <a href="{% url "hotel" hotel.id %}">
-        <img src="/static/uploads/hotels/{{hotel.image}}" alt="{{hotel}}"/>
+        <img src="{% static "uploads/hotels/" %}{{hotel.image}}" alt="{{hotel}}"/>
       </a>
     </div>
     <span class="span7">

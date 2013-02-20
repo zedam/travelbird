@@ -21,6 +21,10 @@
   width: 94%;
 }
 
+.cities{
+  display: none;
+}
+
 .address {
   text-align: right;
 }
