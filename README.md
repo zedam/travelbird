@@ -1,4 +1,4 @@
-travelbird
+TravelBird
 ==========
 
 test for travelbird
@@ -14,12 +14,27 @@ mkdir name_of_the_project
 cd name_of_the_project/
 
 3.- Edit VIRTUAL_ENV location
-VIRTUAL_ENV="/Users/izigelbaum/Documents/workspace/app/travelbird/my_env"
+VIRTUAL_ENV= path_to_your_workspace + "travelbird/my_env"
 
-3.- Link it to virtualenv
+5.- Link it to virtualenv
 source ../my_env/bin/activate
 
-4.- Run the server
+6.- set the database (mysql) in settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myapp',
+        'USER': 'root',
+        'PASSWORD': ' ',
+        'HOST': '127.0.0.1',
+        'PORT': ''
+    }
+}
+
+7.- create DB "myapp" and run:
+./manage.py syncdb
+
+8.- Run the server
 ./manage.py runserver
 
 you can also change the server port to : ./manage.py runserver 0.0.0.0:8001
