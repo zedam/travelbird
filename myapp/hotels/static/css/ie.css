@@ -1,0 +1,10 @@
+footer,
+.searcher,
+
+#hotels li,
+#hotels li.no_data,
+#hotels img
+ {
+  position: relative;
+  behavior: url(/static/css/PIE.htc);
+}
