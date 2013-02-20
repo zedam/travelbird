@@ -10,11 +10,15 @@
     <meta name="description" content="description of the site" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {% load compress %}
+
+    {% compress js %}
+    <script type="text/javascript" src="{% static "js/libs/modernizr.custom.12118.js" %}" ></script>
+    {% endcompress %}
+
     {% block meta_data %}{% endblock %}
 
     <link rel="shortcut icon" href="/static/favicon.ico" />
-     {% load compress %}
-
 
     <!-- CSS Styles -->
 
@@ -88,7 +92,6 @@
     <!-- django compressor installed for JS-->
     {% compress js %}
 
-    <script type="text/javascript" src="{% static "js/libs/modernizr.custom.12118.js" %}" ></script>
     <script type="text/javascript" src="{% static "js/libs/jquery-1.9.1.min.js" %}" ></script>
     <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
     <script type="text/javascript" src="{% static "js/libs/bootstrap.min.js" %}" ></script>

@@ -1,10 +1,24 @@
-footer,
-.searcher,
-
-#hotels li,
-#hotels li.no_data,
-#hotels img
- {
+footer,.breadcrumb,input,.btn,#hotels li,#hotels li.no_data,#hotels img,.add-on
+  {
   position: relative;
   behavior: url(/static/css/PIE.htc);
+}
+
+.searcher {
+  position: relative;
+  background: #2989d8;
+  behavior: url(/static/css/PIE.htc);
+}
+
+input#city {
+  width: 150px;
+}
+
+.typeahead.dropdown-menu {
+  behavior: url(/static/css/PIE.htc);
+}
+
+footer {
+  padding: 0;
+  margin: 0;
 }

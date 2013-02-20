@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+body{
+  background: #eee;
+}
+
 body>.container {
   padding-top: 100px;
 }
@@ -33,11 +37,11 @@ body>section.container {
   padding-bottom: 70px;
 }
 
-footer {
-  position: relative;
+footer.container-fluid {
+  border-top: 1px solid #ccc;
+  position: fixed;
   bottom: 0;
-  background: #eee;
-  box-shadow: -1px 0px 3px #ccc;
+  background: #fff;
   width: 100%;
   margin: 0;
   padding: 0;
