@@ -77,6 +77,6 @@ function getHotels(city){
       'date_range': date_range }
   }).done(function( data ) {
     $('#hotels_results').html(data.html);
-    $('#preloader').show();
+    $('#preloader').hide();
   });
 }

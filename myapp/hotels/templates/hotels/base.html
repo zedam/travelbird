@@ -5,21 +5,12 @@
     <!-- Enable this line for testing for explorer -->
     <!--     <script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script> -->
 
-    <!-- version {{build_version}} {{branch}}/{{commit}} -->
     <title>{% block pagetitle %}{% endblock %}</title>
     <meta charset="utf-8" />
     <meta name="description" content="description of the site" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% block meta_data %}{% endblock %}
-
-    <!--[if gte IE 9]>
-      <style type="text/css">
-        .gradient {
-           filter: none;
-        }
-      </style>
-    <![endif]-->
 
     <link rel="shortcut icon" href="/static/favicon.ico" />
      {% load compress %}

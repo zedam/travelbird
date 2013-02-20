@@ -1,10 +1,7 @@
-#from django.shortcuts import render, get_object_or_404
+import json
 from django.template.loader import render_to_string
 from django.http import HttpResponse
 from django.db.models import Q
-#from django.views.generic import ListView, DetailView
-#from django.template import Context, loader, RequestContext
-from django.utils import simplejson
 
 from hotels.models import Hotel, City
 
@@ -41,5 +38,5 @@ def get_hotels(request):
 
             html = render_to_string( 'hotels/results.html', { 'hotels': o } )
             res = {'html': html }
-            return HttpResponse( simplejson.dumps(res), mimetype )
+            return HttpResponse( json.dumps(res), mimetype )
 

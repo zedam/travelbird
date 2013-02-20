@@ -57,3 +57,7 @@ footer ul li {
   text-shadow: 1px 1px #fff;
   color: #666;
 }
+
+.btn.reset{
+  float: right;
+}

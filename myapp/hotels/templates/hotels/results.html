@@ -1,6 +1,9 @@
 <ul id="result_count">
   <li>
-    <strong>{{hotels.count}}</strong> hotels found
+    <span>
+      <strong>{{hotels.count}}</strong> hotels found
+    </span>
+    {% include "hotels/preloader.html" %}
   </li>
 </ul>
 <ul id="hotels">
