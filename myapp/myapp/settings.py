@@ -25,6 +25,14 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+STATIC_URL = '/static/'
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static', 'static')
+
+CACHE = os.path.join(PROJECT_ROOT, 'cache', 'cache')
+
 COMPRESS_OFFLINE_CONTEXT = {
     'path_to_files': '/static/js/',
 }
@@ -93,8 +101,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = '/static/'
-
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static', 'static')
