@@ -53,9 +53,9 @@ $(function(){
 
   /* To reset filters */
   $('.reset').live('click', function(){
-    var city = $('#city').val('');
+    var city = $('#city').val('Enter your city...');
     var date_range = $('#date_range').val('');
-    getHotels(city);
+    $('.clearBtn.btn-success').click();
   });
 });
 
